@@ -1,5 +1,9 @@
 package teste.model;
 
+import java.util.Calendar;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Cliente {
 	private Long id;
 	private String nome;
@@ -7,6 +11,11 @@ public class Cliente {
 	private String telefone;
 	private String genero;
 	private String endereco;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Calendar dataNascimento;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Calendar dataCadastro;
+	
 	private TipoProduto produtos;
 	
 	
@@ -53,6 +62,20 @@ public class Cliente {
 	public void setProdutos(TipoProduto produtos) {
 		this.produtos = produtos;
 	}
+	public Calendar getDataNascimento() {
+		return dataNascimento;
+	}
+	public void setDataNascimento(Calendar data_nascimento) {
+		this.dataNascimento = data_nascimento;
+	}
+	public Calendar getDataCadastro() {
+		return dataCadastro;
+	}
+	public void setDataCadastro(Calendar dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+	
+	
 	
 	
 

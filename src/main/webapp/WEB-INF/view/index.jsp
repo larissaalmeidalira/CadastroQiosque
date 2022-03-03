@@ -1,38 +1,78 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+      <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
+     <link rel="stylesheet" href="https://cdn.es.gov.br/fonts/font-awesome/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
 
     <style>
-        body{   
-            font-family: sans-serif;
-            margin:auto;
-            width: 40%;
-            background-image: url(imagens/imgcadastro.jpg);
-            background-repeat: no-repeat;
-        }
-        nav{
-            margin-bottom: 80px;
-            left: 30px;
-            text-align: center;
-        }
+       *{
+
+
+
+   		 padding: 0;
+
+    	margin: 0;
+
+   		 box-sizing: border-box;
+
+	}
+
+
+
+body{
+
+    background-color: #80A6F2;
+
+    
+    
+    font-family: -apple-system, BlinkMacSystemFont, 
+            'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+             'Helvetica Neue', sans-serif;
+
+}
+
+
+
+.container{
+
+
+
+    display: flex;
+
+    display: flex;
+
+    position: absolute;
+
+    top: 20%;
+
+    left: 20%;
+
+    border: solid 2px #fff;
+
+    background-color: #fff;
+
+    padding: 40px;
+
+}
+
         nav a{
-            color: White;
+            color: white;
             float: left;
             display: block;
             text-align: center;
-            padding: 20px;
+            margin-left:15em;
+            padding: 150px;
             text-decoration: none;
             transition: all 0.5s;
             cursor: pointer;
             
         }
-
             
         a span {
             cursor: pointer;
@@ -62,138 +102,189 @@
             padding-right: 15px;
             
         }
-        .container{
-        margin-top: 10px;
-        display: flex;
-        flex-direction: column;
-        }
-        header{
-            display: block;
-        }
-        fieldset{
-            background: rgb(19, 13, 6, 0.7);
-            border: none;
-            border-radius: 5px;
-            margin-top: 5px;
-            height: 370px;
-        }
-
-        input{
-            border-radius: 5px;
-            border: none;
-            margin-bottom: 25px;
-            margin-right: 15px;
-        }
-        input:hover {
-            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.295), 0 17px 50px 0 rgba(0,0,0,0.295);
-        }
-
-        legend{
-            color: white;
-            border-radius: 15px;
-            margin-bottom: 5px;
-            padding-bottom: 25px;
-        }
-        p{
-            color: white;
-            margin-top: 5px;
-        }
-        label{
-            color:white;
-        }
-        
-        .botao{
-            background-color: white;
-            color: #023859;
-            border-radius: 5px;
-            border: none;
-            display: inline;
-            margin-top: 5px;
-            width: 10%;
-            height: 20px;
-        }
-
-        .botao:hover {
-            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.295), 0 17px 50px 0 rgba(0,0,0,0.295);
-        }
-
-        .texto{
-            text-align:justify;
-            margin-right: 20px;
-        }
        
-        .nome{
-            width: 30%;
-            height: 17px;
-        }
-        .sobrenome{
-            width: 35%;
-            height: 17px;
-        }
-        .email{
-            width: 40%;
-            height: 17px;
-        }
-        .data{
-            width: 20%;
-            height: 17px;
-        }
-        .endereco{
-            width: 65%;
-            height: 17px;
-        }
-        img{
-            width: 100%;
-            height: 100%;
-        }
-        select{
-            width: 120px;
-            margin-bottom: 25px;
-            text-align: center;
-            border: none;
-            border-radius: 5px;
-            height: 19px;
-        }
+       .image{
+
+    		background-color: #C9D7F2;
+    		height: 50vh;
+
+		}
+
+
+
+		.form{
+
+    		margin-left: 5em;
+
+    		width: 30em;
+
+    		padding: 1em;
+
+		}
+
+
+
+
+		form{
+
+    		padding: 2em;
+	
+		}
+		
+       	input{
+
+    	margin-bottom: 1em;
+
+		}
+
+
+
+		input.nome, .email, .telefone, .select, .endereco{
+
+
+
+    	padding: 0.3em;
+
+    	width: 95%;
+
+    	margin: 0.5em;
+
+	}
+
+
+
+
+	fieldset{
+
+    border:  2px solid #80A6F2;
+
+	}
+
+
+
+	.botao{
+
+    border: none;
+
+    background-color: #80A6F2;
+
+    color: #fff;
+
+    border-radius: 6px;
+
+    padding: 0.8em;
     
+    margin-top:2em;
+    
+    width: 100px;
+    
+	}
+
+
+
+	.endereco{
+
+
+
+    	margin-top: 1em;
+
+   	 margin-bottom: 1em;
+
+	}
+
+
+
+		.select{
+
+
+
+    margin-top: 1em;
+
+    margin-bottom: 1em;
+
+   
+
+}
+
+
+
+.box{
+
+
+
+    padding: 0.5em;
+
+}
+
+
+
+.end,.genero, .produto {
+
+    margin-top: 1em;
+
+}
     </style>
 </head>
 
     <body>
     
-        <div class="container">
-            <header>
-                <nav>
-                    <a href="cadastro.html"><b>Cadastre-se</b></a>
-                    <a href="estatisticas.html" style="vertical-align:middle" ><span><b>Estatísticas</b></span></a>
-                    
-                </nav>
+     <header>
+               
             </header>
+            	 <nav>
+          			
+                    <a  href="listarCadastrados" style="vertical-align:middle" ><span><b>Clientes cadastrados</b></span></a>
+                    <a  href="Estatisticas" style="vertical-align:middle" ><span><b>Estatísticas</b></span></a>
+    			 </nav>
+    
+        <div class="container">
+           
+            
+            <div class="image">
+
+            <img src="Mar-Business_1-removebg-preview.png">
+
+
+	
+        </div>
+        
+        
+
+
+
+        <div class=" form">
+        
+        	<h1>Cadastre-se</h1>
 
             <form action="salvarCadastrado" >
+            <input type="hidden" name="id" value="${dados.id }">
                 <fieldset>
-                    <legend><b>Cadastro</b></legend>
+                	<div class="box">
+                	<i class="fa fa-user"></i>
                     <label for="nome"><b>Nome:</b></label>
-                    <input class="nome" type="text" name="nome" required value="${cliente.nome }">
-
+                    <input class="nome" type="text" name="nome" required value="${dados.nome }">
+					<br>
+					<i class="fa fa-envelope"></i>
                     <label for="email"><b>E-mail</b></label>
-                    <input class="email" type="email" name="email" required value="${cliente.email }">
-                        
+                    <input class="email" type="email" name="email" required value="${dados.email }">
+                     <i class="fa fa-phone"></i>   
                     <label for="telefone"><b>Telefone</b></label>
-                    <input class="telefone" type="text" name="telefone" value="${cliente.telefone }">
+                    <input class="telefone" type="text" name="telefone" required value="${dados.telefone }">
                     <br>
+                    
                     <label for="data"><b>Data de Nascimento</b></label>
-                    <input class="data" type="date" min="1900-01-01" max="2022-01-01" name="datanascimento">
+                    <input class="data" type="date" min="1900-01-01" max="2022-01-01" name="dataNascimento" required value='<fmt:formatDate pattern="yyyy-MM-dd" value="${dados.dataNascimento.time }"/>'>
                     <br>
-
+				
                     <p><b>Gênero:</b>
-                        <input type="radio" name="genero" value="M" required value="${cliente.genero }">
+                        <input type="radio" name="genero" value="Masculino" required value="${dados.genero }">
                         <label>Masculino</label>
-                        <input type="radio" name="genero" value="F" required value="${cliente.genero}">
+                        <input type="radio" name="genero" value="Feminino" required value="${dados.genero}">
                         <label>Feminino</label>
                     </p>
-
+					<i class="fa-solid fa-location-dot"></i>
                     <label><b>Endereço</b></label>
-                    <input class="endereco" type="text" name="endereco" value="${cliente.endereco}" >
+                    <input class="endereco" type="text" name="endereco" required value="${dados.endereco}" >
 
 
                     <br>
@@ -201,7 +292,7 @@
                     <select name="produto">
 						<c:forEach items="${tipos }" var="t">
 					
-							<option value="${t }">${t.toString() }</option>
+							<option <c:if test="${dados.produtos == t }">selected</c:if> value="${t }">${t.toString() }</option>
 			
 						</c:forEach>
 					</select>
@@ -209,11 +300,10 @@
                     
                     <br>
                     <input class="botao" type="submit" value="Enviar">
-                    <input class="botao" type="submit" value="Limpar">
-                
+                </div>
                 </fieldset>
             </form>  
         </div> 
-        
+        </div>
     </body>
 </html>

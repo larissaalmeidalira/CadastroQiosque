@@ -15,6 +15,7 @@ public class ConnectionFactory {
 			return conexao;
 		} catch (Exception e) {
 			throw new RuntimeException(e);
+			
 		}
 	}
 }

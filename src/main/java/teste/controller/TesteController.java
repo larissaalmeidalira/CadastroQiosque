@@ -1,10 +1,14 @@
 package teste.controller;
 
+
+
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import teste.dao.DaoCadastro;
 import teste.model.Cliente;
+
 import teste.model.TipoProduto;
 
 
@@ -28,12 +32,18 @@ public class TesteController {
 		System.out.println(dados.getTelefone());
 		System.out.println(dados.getGenero());
         System.out.println(dados.getEndereco());
-        System.out.println(dados.getProdutos());
-		
+        System.out.println(dados.getDataNascimento());
 		DaoCadastro dao = new DaoCadastro();
-		dao.inserir(dados);
+		
+		if(dados.getId()==null)  {
+			dao.inserir(dados);
+		}else {
+			dao.atualizar(dados);
+		}
 		
 		return "redirect:listarCadastrados";
+		
+		
 		
 	}
 	
@@ -49,20 +59,32 @@ public class TesteController {
 	}
 	
 	@RequestMapping("excluirCadastro")
-	public String excluir(Long idProduto) {
+	public String excluir(Long id) {
 		DaoCadastro dao = new DaoCadastro();
-		dao.excluir(idProduto);
+		dao.excluir(id);
 		return "redirect:listarCadastrados";
 	}
 	
-	/*@RequestMapping("alterarCadastro")
-	public String alterar(Long idProduto, Model model) {
+	@RequestMapping("alterarCadastro")
+	public String alterar(Long id, Model model) {
 		DaoCadastro dao = new DaoCadastro();
-		model.addAttribute("produtos", dao.buscar(idProduto));
+		model.addAttribute("dados", dao.buscar(id));
 		
-		return "forward: index";
-	}*/
+		return "forward:index";
+	}
 	
+	@RequestMapping("Estatisticas")
+	
+	public String contador(Model model) {
+		
+		DaoCadastro dao = new DaoCadastro();
+		model.addAttribute("dados", dao.contador());
+
+	
+		
+		return "estatisticas";
+	}
 	
 	
 }
+
